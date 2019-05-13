@@ -37,7 +37,7 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
 	return gulp.src([
-		
+
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/swiper/dist/js/swiper.min.js',
 		'app/js/common.js', // Always at the end
@@ -67,26 +67,26 @@ gulp.task('rsync', function() {
 		compress: true
 	}))
 });
-// gulp.task('build', async function() {
+gulp.task('build', async function() {
 
-//     var buildCss = gulp.src([ // Переносим библиотеки в продакшен 
-//         'app/css/main.min.css'
-//         ])
-//     .pipe(gulp.dest('dist/css'))
+    var buildCss = gulp.src([ // Переносим библиотеки в продакшен
+        'app/css/main.min.css'
+        ])
+    .pipe(gulp.dest('dist/css'))
 
-//     var buildImg = gulp.src('app/img/**/*') // Переносим шрифты в продакшен
-//     .pipe(gulp.dest('dist/img'))
+    var buildImg = gulp.src('app/img/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/img'))
 
-//     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
-//     .pipe(gulp.dest('dist/fonts'))
+    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/fonts'))
 
-//     var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-//     .pipe(gulp.dest('dist/js'))
+    var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+    .pipe(gulp.dest('dist/js'))
 
-//     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-//     .pipe(gulp.dest('dist'));
+    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    .pipe(gulp.dest('dist'));
 
-// });
+});
 
 if (gulpversion == 3) {
 	gulp.task('watch', ['styles', 'scripts', 'browser-sync'], function() {

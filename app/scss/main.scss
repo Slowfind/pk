@@ -7,7 +7,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-size: 18px;
 	position: relative;
-	line-height: 1.65;
+	line-height: 1.5;
 	font-family: $default-font;
 	overflow-x: hidden;
 	color: $text;
@@ -66,7 +66,7 @@ a {
 	display: inline-block;
 }
 
-// Стили header 
+// Стили header
 
 .header {
 	.row {
@@ -131,7 +131,7 @@ a {
 	}
 	&-form {
 		position: absolute;
-		top:0;
+		top:150px;
 		right: 400px;
 		z-index: 500;
 		background-color: #d5cfc7;
@@ -139,10 +139,11 @@ a {
 		border-radius: 20px;
 		border-bottom: 2px solid #fff;
 		border-top: 2px solid #fff;
+        width: 22%;
 		&__wrapper {
 			padding: 30px;
 		}
-		
+
 	}
 	&-social {
 		width: 100%;
@@ -202,7 +203,7 @@ a {
 		flex-direction: column;
 		input {
 			margin-bottom: 20px;
-			
+
 		}
 		a {
 			width: 100%;
@@ -223,7 +224,7 @@ a {
 	}
 }
 
-// Section ADVANTAGES 
+// Section ADVANTAGES
 %width {
 	content:'';
 	display: block;
@@ -236,7 +237,7 @@ a {
 }
 .s-advantages {
 	h1 {
-		position: relative;		
+		position: relative;
 		&:before {
 			content: 'advantages';
 		    text-transform: uppercase;
@@ -254,14 +255,14 @@ a {
 	&__card {
 		text-align: center;
 		margin-bottom: 20px;
-		&-image {			
+		&-image {
 			width: 100%;
 			height: 100%;
 			margin-bottom: 20px;
 			img {
 				border: 5px solid #656258;
 				border-radius: 5px;
-			}			
+			}
 		}
 		&-title {
 			text-align: center;
@@ -305,19 +306,19 @@ a {
 			margin-bottom: 50px;
 			width: 80%;
 			position: relative;
-			&:before {
-				content: '';
-				width: 200px;
-				height: 5px;
-				background-color: #c9c7c1;
-				border-radius: 50%;
-				position: absolute;
-				top: 0;
-				left:5px;
-			}
-			&:after {
+			// &:before {
+			// 	content: '';
+			// 	width: 200px;
+			// 	height: 5px;
+			// 	background-color: #c9c7c1;
+			// 	border-radius: 50%;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left:5px;
+			// }
+			// &:after {
 
-			}
+			// }
 			&-title {
 				font-size: 30px;
 				line-height: 1.25;
@@ -340,12 +341,12 @@ a {
 					content: '';
 					height: 2px;
 					width: 100px;
-					background-color: #ededeb; 
+					background-color: #ededeb;
 					display: block;
 					position: absolute;
 					z-index: 500;
 					top: 70px;
-					
+
 
 				}
 			}
@@ -394,9 +395,9 @@ a {
 		}
 	}
 }
-// Section CERTIFICATES 
+// Section CERTIFICATES
 .s-certificates {
-	
+
 	.h2 {
 
 		&:before {
@@ -422,8 +423,31 @@ a {
 	}
 }
 // Section WORKS
+%quote {
+    content: '';
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 25px;
+}
 .s-works {
 	background-color: #f3f2f2;
+	.arrow-swiper-button {
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left:0;
+	}
+    .row {
+        justify-content: center;
+    }
 	.h2 {
 		padding-top: 80px;
 		&:before {
@@ -446,5 +470,60 @@ a {
 		background-repeat: no-repeat;
 		background-position: center;
 	}
+    &-blockquote {
+        position: relative;
+        padding: 30px;
+        margin: 30px 0;
+        text-align: center;
+
+        cite {
+            font-family: $font-bold;
+            font-weight: 800;
+        }
+        &:before {
+            @extend %quote;
+            background-image: url("/img/left-quotes.svg");
+            top: 0px;
+            left: -50px;
+        }
+        &:after {
+            @extend %quote;
+            background-image: url("/img/right-quotes.svg");
+            bottom: 0px;
+            right: -50px;
+        }
+    }
+}
+// Section WHY
+.s-why {
+    &__content {
+        text-align: center;
+        font-style: italic;
+        line-height: 1;
+        &-title {
+            line-height: 1.4;
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 40px;
+            b {
+               font-style: normal;
+            }
+        }
+    }
+}
+// footer
+.footer {
+    padding-top: 40px;
+    margin-bottom: 80px;
+    &-menu {
+        &__item {
+            margin-bottom: 10px;
+        }
+    }
+    &-social {
+        &__item {
+            margin-bottom: 10px;
+        }
+    }
 }
 @import "media"; // Always at the end
