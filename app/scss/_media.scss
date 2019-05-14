@@ -5,17 +5,42 @@
 
 // ≥1300px
 @include media-breakpoint-down(lg) {
-	
+	.s-advantages__content-wrapper:before {
+		left: 80px;
+	}
+	.s-advantages__content-wrapper:after {
+		right: 80px;
+	}
 }
 
 // ≥992px
 @include media-breakpoint-down(md) {
-
+	.header-menu__item {
+		padding-left: 5px;
+	}
+	.s-certificates-image {
+		height: 400px;
+		margin-bottom: 40px;
+	}
+	.s-why__image img {
+		margin: auto;
+	}
+	.footer-logo {
+		text-align: center;
+	}
 }
 
 // ≥768px
 @include media-breakpoint-down(sm) {
-
+	.s-services__card-image img {
+		margin: auto;
+	}
+	.s-certificates-image {
+		height: 300px;
+	}
+	.s-works-blockquote {
+		padding: 10px 0;
+	}
 }
 
 // ≥576px
